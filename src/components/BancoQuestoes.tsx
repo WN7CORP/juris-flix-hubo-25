@@ -7,7 +7,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Input } from '@/components/ui/input';
 import { Search, Target, BookOpen, Brain, Clock, Award, Check, X } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { supabase } from '@/integrations/supabase/client';
 
 // Mock data para demonstração
 const mockQuestoes = [
@@ -76,33 +75,6 @@ export const BancoQuestoes = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [acertos, setAcertos] = useState(0);
   const [tentativas, setTentativas] = useState(0);
-  const [bancoQuestoesLink, setBancoQuestoesLink] = useState<string>('');
-
-  // Buscar link do Banco de Questões da tabela APP
-  useEffect(() => {
-    const fetchBancoQuestoesLink = async () => {
-      try {
-        const { data, error } = await supabase
-          .from('APP')
-          .select('link')
-          .eq('funcao', 'Banco de Questões')
-          .single();
-
-        if (error) {
-          console.error('Erro ao buscar link do Banco de Questões:', error);
-          return;
-        }
-
-        if (data?.link) {
-          setBancoQuestoesLink(data.link);
-        }
-      } catch (err) {
-        console.error('Erro ao carregar link:', err);
-      }
-    };
-
-    fetchBancoQuestoesLink();
-  }, []);
 
   const questoesFiltradas = questoes.filter(questao => {
     const matchArea = areaFiltro === "Todas as Áreas" || questao.area === areaFiltro;
@@ -162,22 +134,14 @@ export const BancoQuestoes = () => {
           <div className="text-center py-12">
             <Target className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-muted-foreground mb-2">
-              Banco de Questões
+              Nenhuma questão encontrada
             </h3>
             <p className="text-muted-foreground mb-4">
-              Acesse milhares de questões para concursos públicos
+              Tente ajustar os filtros para encontrar questões.
             </p>
-            {bancoQuestoesLink ? (
-              <Button asChild>
-                <a href={bancoQuestoesLink} target="_blank" rel="noopener noreferrer">
-                  Acessar Banco de Questões
-                </a>
-              </Button>
-            ) : (
-              <Button onClick={reiniciarFiltros}>
-                Reiniciar Filtros
-              </Button>
-            )}
+            <Button onClick={reiniciarFiltros}>
+              Reiniciar Filtros
+            </Button>
           </div>
         </div>
       </div>
