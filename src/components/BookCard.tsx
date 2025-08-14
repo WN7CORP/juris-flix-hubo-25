@@ -38,7 +38,9 @@ export const BookCard = ({ book, areaColor, getProfessionLogo, showAreaBadge = f
 
   const handleDownloadClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setShowPremiumModal(true);
+    if (book.download) {
+      window.open(book.download, '_blank');
+    }
   };
 
   return (
@@ -118,7 +120,7 @@ export const BookCard = ({ book, areaColor, getProfessionLogo, showAreaBadge = f
                   )}
                 </div>
 
-                {/* Botão de download com premium */}
+                {/* Botão de download direto */}
                 <div className="flex justify-end">
                   {book.download && (
                     <Button 
@@ -229,7 +231,7 @@ export const BookCard = ({ book, areaColor, getProfessionLogo, showAreaBadge = f
                       </div>
                     )}
 
-                    {/* Botão de download com premium */}
+                    {/* Botão de download direto */}
                     {book.download && (
                       <Button 
                         className="w-full"
@@ -247,12 +249,6 @@ export const BookCard = ({ book, areaColor, getProfessionLogo, showAreaBadge = f
         )}
       </AnimatePresence>
 
-      {/* Modal Premium */}
-      {showPremiumModal && (
-        <div className="fixed inset-0 z-[9999]">
-          <PremiumRequired functionName="Download de Livros" />
-        </div>
-      )}
     </>
   );
 };

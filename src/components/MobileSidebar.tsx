@@ -39,17 +39,18 @@ const getUniqueIconForFunction = (funcao: string, index: number) => {
   // Mapeamento específico para funções principais
   if (name.includes('vade') || name.includes('mecum')) return Scale;
   if (name.includes('assistente') && name.includes('ia')) return Bot;
+  if (name.includes('biblioteca') && (name.includes('jurídica') || name.includes('clássicos'))) return BookOpen;
   if (name.includes('biblioteca')) return Library;
   if (name.includes('audio') || name.includes('áudio')) return Headphones;
   if (name.includes('mapa') && name.includes('mental')) return Brain;
   if (name.includes('plataforma') && name.includes('desktop')) return Monitor;
-  if (name.includes('flashcard') || name.includes('flash card')) return Brain; // Alterado para cérebro
+  if (name.includes('flashcard') || name.includes('flash card')) return Zap;
   if (name.includes('resumo') || name.includes('codigo') || name.includes('código')) return BookOpen;
   if (name.includes('video') || name.includes('vídeo') || name.includes('aula')) return Play;
   if (name.includes('petições') || name.includes('peticoes') || name.includes('petição')) return Folder;
   if (name.includes('noticia') || name.includes('notícia') || name.includes('juridica')) return Newspaper;
   if (name.includes('juriflix') || name.includes('filme') || name.includes('cinema')) return Film;
-  if (name.includes('simulado') || name.includes('prova') || name.includes('oab')) return Hammer; // Alterado para martelo
+  if (name.includes('simulado') || name.includes('prova') || name.includes('oab')) return Scale;
   if (name.includes('calendario') || name.includes('agenda')) return Calendar;
   if (name.includes('curso') || name.includes('aula')) return GraduationCap;
   if (name.includes('pesquisa') || name.includes('busca')) return Search;

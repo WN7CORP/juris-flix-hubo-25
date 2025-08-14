@@ -33,8 +33,8 @@ export const MobileHeader = ({
               
               
 
-              <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full hover:bg-primary/10 transition-all duration-300" onClick={() => setSidebarOpen(true)}>
-                <Menu className={`h-5 w-5 text-amber-400 transition-transform duration-300 ${sidebarOpen ? 'rotate-90' : 'rotate-0'}`} />
+              <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full hover:bg-amber-400/20 bg-amber-400/10 transition-all duration-200 active:scale-95" onClick={() => setSidebarOpen(true)}>
+                <Menu className={`h-5 w-5 text-amber-400 transition-transform duration-200 ${sidebarOpen ? 'rotate-90' : 'rotate-0'}`} />
               </Button>
             </div>
           </div>

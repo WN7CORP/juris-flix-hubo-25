@@ -47,18 +47,18 @@ const getIconForFunction = (funcao: string, id: number) => {
   // Mapeamento específico por ID e nome
   if (id === 1 || name.includes('vade') || name.includes('mecum')) return Scale;
   if (id === 12 || name.includes('assistente') && name.includes('ia')) return Bot;
-  if (id === 3 || name.includes('biblioteca')) return Library;
+  if (id === 3 || name.includes('biblioteca') && name.includes('jurídica')) return BookOpen;
   if (id === 4 || name.includes('audio') || name.includes('áudio')) return Headphones;
   if (id === 13 || name.includes('mapa') && name.includes('mental')) return Brain;
   if (id === 18 || name.includes('plataforma') && name.includes('desktop')) return Monitor;
-  if (id === 9 || name.includes('flashcard') || name.includes('flash card')) return Brain;
-  if (id === 5 || name.includes('resumo')) return BookOpen;
+  if (id === 9 || name.includes('flashcard') || name.includes('flash card')) return Zap;
+  if (id === 5 || name.includes('resumo')) return FileText;
   if (id === 8 || name.includes('video') || name.includes('vídeo') || name.includes('aula')) return Play;
   if (id === 10 || name.includes('petições') || name.includes('peticoes') || name.includes('petição')) return Folder;
   if (id === 17 || name.includes('noticia') || name.includes('notícia') || name.includes('juridica')) return Newspaper;
   if (id === 16 || name.includes('juriflix') || name.includes('filme') || name.includes('cinema')) return Film;
   if (id === 6 || name.includes('questões') || name.includes('questao') || name.includes('questão')) return Target;
-  if (id === 7 || name.includes('simulado') || name.includes('prova') || name.includes('oab')) return Hammer;
+  if (id === 7 || name.includes('simulado') || name.includes('prova') || name.includes('oab')) return Scale;
   if (id === 11 || name.includes('curso')) return GraduationCap;
   if (id === 15 || name.includes('dicionário') || name.includes('dicionario')) return Search;
   if (id === 2 || name.includes('download') || name.includes('baixar')) return Download;

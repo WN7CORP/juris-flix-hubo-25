@@ -15,6 +15,7 @@ import { AssistenteIA } from '@/components/AssistenteIA';
 import { BibliotecaClassicos } from '@/components/BibliotecaClassicos';
 import { Loja } from '@/components/Loja';
 import { RatingCard } from '@/components/RatingCard';
+import { BancoQuestoes } from '@/components/BancoQuestoes';
 
 import { useEffect, useState } from 'react';
 
@@ -96,14 +97,7 @@ export const AppFunction = () => {
           </div>
         );
       case 'Banco de Questões':
-        return (
-          <div className="flex items-center justify-center h-full">
-            <div className="text-center p-8">
-              <h2 className="text-2xl font-bold mb-4 gradient-text">Banco de Questões</h2>
-              <p className="text-muted-foreground">Milhares de questões para concursos públicos</p>
-            </div>
-          </div>
-        );
+        return <BancoQuestoes />;
       case 'Cursos':
         return (
           <div className="flex items-center justify-center h-full">
@@ -160,9 +154,9 @@ export const AppFunction = () => {
                   variant="ghost" 
                   size="icon" 
                   onClick={handleBack} 
-                  className="text-foreground hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 hover:scale-110 h-8 w-8 sm:h-10 sm:w-10"
+                  className="text-white bg-red-600/20 hover:bg-red-600/40 hover:text-white transition-all duration-200 hover:scale-105 active:scale-95 h-8 w-8 sm:h-10 sm:w-10 border border-red-600/30 hover:border-red-600/50"
                 >
-                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 text-red-400" />
                 </Button>
                 <div>
                   <h1 className="text-lg sm:text-xl font-bold gradient-text">
@@ -202,9 +196,9 @@ export const AppFunction = () => {
                   variant="ghost" 
                   size="icon" 
                   onClick={handleBack} 
-                  className="text-foreground hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 hover:scale-110 h-8 w-8 sm:h-10 sm:w-10"
+                  className="text-white bg-red-600/20 hover:bg-red-600/40 hover:text-white transition-all duration-200 hover:scale-105 active:scale-95 h-8 w-8 sm:h-10 sm:w-10 border border-red-600/30 hover:border-red-600/50"
                 >
-                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 text-red-400" />
                 </Button>
                 <div>
                   <h1 className="text-lg sm:text-xl font-bold gradient-text">
@@ -248,9 +242,9 @@ export const AppFunction = () => {
                   variant="ghost" 
                   size="icon" 
                   onClick={handleBack} 
-                  className="text-foreground hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 hover:scale-110 h-8 w-8 sm:h-10 sm:w-10"
+                  className="text-white bg-red-600/20 hover:bg-red-600/40 hover:text-white transition-all duration-200 hover:scale-105 active:scale-95 h-8 w-8 sm:h-10 sm:w-10 border border-red-600/30 hover:border-red-600/50"
                 >
-                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 text-red-400" />
                 </Button>
                 <div>
                   <h1 className="text-lg sm:text-xl font-bold gradient-text">
@@ -294,9 +288,9 @@ export const AppFunction = () => {
                   variant="ghost" 
                   size="icon" 
                   onClick={handleBack} 
-                  className="text-foreground hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 hover:scale-110 h-8 w-8 sm:h-10 sm:w-10"
+                  className="text-white bg-red-600/20 hover:bg-red-600/40 hover:text-white transition-all duration-200 hover:scale-105 active:scale-95 h-8 w-8 sm:h-10 sm:w-10 border border-red-600/30 hover:border-red-600/50"
                 >
-                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 text-red-400" />
                 </Button>
                 <div>
                   <h1 className="text-lg sm:text-xl font-bold gradient-text">
@@ -339,9 +333,9 @@ export const AppFunction = () => {
                 variant="ghost" 
                 size="icon" 
                 onClick={handleBack} 
-                className="text-foreground hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 hover:scale-110 h-8 w-8 sm:h-10 sm:w-10"
+                className="text-white bg-red-600/20 hover:bg-red-600/40 hover:text-white transition-all duration-200 hover:scale-105 active:scale-95 h-8 w-8 sm:h-10 sm:w-10 border border-red-600/30 hover:border-red-600/50"
               >
-                <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
+                <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 text-red-400" />
               </Button>
               <div>
                 <h1 className="text-lg sm:text-xl font-bold gradient-text">
