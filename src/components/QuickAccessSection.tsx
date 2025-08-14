@@ -1,8 +1,37 @@
 import { Bot, Scale, Monitor, Headphones, BookOpen } from 'lucide-react';
 import { useNavigation } from '@/context/NavigationContext';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 export const QuickAccessSection = () => {
   const { setCurrentFunction } = useNavigation();
+  const [audioaulasLink, setAudioaulasLink] = useState<string>('');
+  
+  // Buscar link das Áudio-aulas da tabela APP
+  useEffect(() => {
+    const fetchAudioaulasLink = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('APP')
+          .select('link')
+          .eq('funcao', 'Áudio-aulas')
+          .single();
+
+        if (error) {
+          console.error('Erro ao buscar link das Áudio-aulas:', error);
+          return;
+        }
+
+        if (data?.link) {
+          setAudioaulasLink(data.link);
+        }
+      } catch (err) {
+        console.error('Erro ao carregar link:', err);
+      }
+    };
+
+    fetchAudioaulasLink();
+  }, []);
   
   const quickItems = [{
     id: 1,
@@ -27,7 +56,8 @@ export const QuickAccessSection = () => {
     title: 'Áudio-aulas',
     active: true,
     icon: Headphones,
-    functionName: 'Audioaulas'
+    functionName: 'Áudio-aulas',
+    externalLink: audioaulasLink
   }, {
     id: 5,
     title: 'Biblioteca Jurídica',
@@ -38,7 +68,11 @@ export const QuickAccessSection = () => {
 
   const handleItemClick = (item: typeof quickItems[0]) => {
     if (item.active) {
-      setCurrentFunction(item.functionName);
+      if (item.externalLink) {
+        window.open(item.externalLink, '_blank');
+      } else {
+        setCurrentFunction(item.functionName);
+      }
     }
   };
   return (
